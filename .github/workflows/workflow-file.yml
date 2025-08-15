@@ -19,7 +19,7 @@ jobs:
         python-version: 3.9
 
     - name: Install Dependencies
-      run: pip install requests beautifulsoup4 cssutils firebase-admin
+      run: pip install requests beautifulsoup4 firebase-admin
 
     - name: Decode and Create Firebase Key File
       env:
