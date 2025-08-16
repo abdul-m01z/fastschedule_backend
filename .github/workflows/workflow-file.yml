@@ -19,12 +19,8 @@ jobs:
         python-version: 3.12
 
     - name: Install Dependencies
-      run: pip install requests beautifulsoup4 firebase-admin
+      run: pip install requests beautifulsoup4 PyGithub beautifulsoup4
 
-    - name: Decode and Create Firebase Key File
-      env:
-        FIREBASE_KEY: ${{ secrets.FIREBASE_KEY }}
-      run: echo "$FIREBASE_KEY" | base64 --decode > firebase-key.json
 
     - name: Decrypt comparer.py
       env:
@@ -41,6 +37,7 @@ jobs:
 
     - name: Cleanup
       run: |
-        rm firebase-key.json
+        rm timetable.json
+        rm timetable.old.json
         rm comparer.py
         rm schedule_generator.py
