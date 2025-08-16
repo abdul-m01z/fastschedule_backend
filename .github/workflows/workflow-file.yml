@@ -33,6 +33,8 @@ jobs:
       run: openssl enc -aes-128-cbc -d -salt -pbkdf2 -pass pass:$AES_PASSWORD -in schedule_generator.py.enc -out schedule_generator.py
 
     - name: Run comparer.py
+      env:
+        FASTSCHEDULE_ACC_GITHUB_PAT: ${{ secrets.FASTSCHEDULE_ACC_GITHUB_PAT }}
       run: python comparer.py
 
     - name: Cleanup
@@ -42,3 +44,4 @@ jobs:
         rm comparer.py
 
         rm schedule_generator.py
+
