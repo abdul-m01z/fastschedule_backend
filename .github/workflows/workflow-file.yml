@@ -19,7 +19,7 @@ jobs:
         python-version: 3.12
 
     - name: Install Dependencies
-      run: pip install requests beautifulsoup4 PyGithub
+      run: pip install requests beautifulsoup4 PyGithub cssutils
 
 
     - name: Decrypt comparer.py
@@ -44,4 +44,5 @@ jobs:
         rm comparer.py
 
         rm schedule_generator.py
+
 
